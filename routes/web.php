@@ -1,6 +1,7 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\GameController;
 
 /*
 |--------------------------------------------------------------------------
@@ -20,6 +21,8 @@ Route::get('/', function () {
 Route::get('/game', function () {
     return view('game');
 });
+
+Route::post('/game', [GameController::class, 'check']);
 
 Route::get('/dashboard', function () {
     return view('dashboard');
